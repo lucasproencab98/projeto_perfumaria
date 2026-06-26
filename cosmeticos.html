@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosméticos — Kramer Parfum</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="cosmeticos">
+
+<header class="header">
+    <div class="container">
+        <div class="logo"><img src="imagens/logo/logo.png" alt="Kramer Parfum"></div>
+        <nav class="menu">
+            <a href="index.html"      data-page="inicio">Início</a>
+            <a href="perfumes.html"   data-page="perfumes">Perfumes</a>
+            <a href="cosmeticos.html" data-page="cosmeticos">Cosméticos</a>
+            <a href="marca.html"      data-page="marca">Marca</a>
+            <a href="contato.html"    data-page="contato">Contato</a>
+        </nav>
+        <a href="#" class="btn-whatsapp">WhatsApp</a>
+    </div>
+</header>
+
+<section class="page-hero">
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content">
+        <span>Beleza & Cuidado</span>
+        <h1>Cosméticos</h1>
+        <p>Produtos selecionados para realçar sua elegância.</p>
+    </div>
+</section>
+
+<section class="produtos-grid container" id="grid">
+    <!-- produtos serão inseridos aqui via JS quando disponíveis -->
+</section>
+
+<div class="em-breve" id="emBreve" style="display:none">
+    <h2>Em breve</h2>
+    <p>Nossa linha de cosméticos está sendo preparada com muito cuidado. Fique atento às novidades.</p>
+    <a href="#" class="btn-whatsapp">Avisar quando chegar</a>
+</div>
+
+<script>
+fetch('data/cosmeticos.json')
+    .then(r => r.json())
+    .then(produtos => {
+        if(!produtos || produtos.length === 0){
+            document.getElementById('emBreve').style.display = 'block';
+            return;
+        }
+        const grid = document.getElementById('grid');
+        grid.innerHTML = produtos.map(p => `
+            <a href="cosmetic.html?id=${p.id}" class="produto-card">
+                <img src="${p.imagens[0]}" alt="${p.nome}">
+                <div class="produto-info">
+                    <span>${p.categoria}</span>
+                    <h3>${p.nome}</h3>
+                    <p>${p.descricao.substring(0,80)}...</p>
+                    <div class="produto-preco">${p.preco}</div>
+                </div>
+            </a>
+        `).join('');
+    })
+    .catch(() => {
+        document.getElementById('grid').style.display = 'none';
+        document.getElementById('emBreve').style.display = 'block';
+    });
+</script>
+<script src="cube.js"></script>
+</body>
+</html>
