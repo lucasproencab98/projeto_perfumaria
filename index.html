@@ -24,9 +24,26 @@
             <a href="marca.html"      data-page="marca">Marca</a>
             <a href="contato.html"    data-page="contato">Contato</a>
         </nav>
-        <a href="#" class="btn-whatsapp">WhatsApp</a>
+        <a href="#" class="btn-whatsapp desktop-only">WhatsApp</a>
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </button>
     </div>
 </header>
+
+<!-- MENU MOBILE -->
+<div class="menu-mobile" id="menuMobile">
+    <button class="menu-mobile-close" onclick="toggleMenu()">×</button>
+    <nav class="menu-mobile-links">
+        <a href="index.html"      data-page="inicio"     onclick="toggleMenu()">Início</a>
+        <a href="perfumes.html"   data-page="perfumes"   onclick="toggleMenu()">Perfumes</a>
+        <a href="cosmeticos.html" data-page="cosmeticos" onclick="toggleMenu()">Cosméticos</a>
+        <a href="marca.html"      data-page="marca"      onclick="toggleMenu()">Marca</a>
+        <a href="contato.html"    data-page="contato"    onclick="toggleMenu()">Contato</a>
+    </nav>
+    <a href="#" class="btn-whatsapp">WhatsApp</a>
+</div>
+<div class="menu-mobile-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
 
 <section class="hero">
     <div class="hero-bg-gradient"></div>

@@ -1158,3 +1158,110 @@ RODAPÉ
         grid-column:1 / -1;
     }
 }
+
+/* =========================
+MENU MOBILE
+========================= */
+
+/* Esconde hamburguer no desktop */
+.hamburger{
+    display:none;
+    flex-direction:column;
+    gap:5px;
+    background:none;
+    border:none;
+    cursor:pointer;
+    padding:6px;
+    z-index:1100;
+}
+
+.hamburger span{
+    display:block;
+    width:24px;
+    height:2px;
+    background:#C8A15B;
+    border-radius:2px;
+    transition:.3s;
+    transform-origin:center;
+}
+
+/* animação X quando aberto */
+.hamburger.open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2){ opacity:0; }
+.hamburger.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+
+/* Overlay escuro */
+.menu-mobile-overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.6);
+    z-index:1199;
+    backdrop-filter:blur(4px);
+}
+.menu-mobile-overlay.open{ display:block; }
+
+/* Painel do menu mobile */
+.menu-mobile{
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:75%;
+    max-width:300px;
+    height:100%;
+    background: linear-gradient(160deg, #3a0b18 0%, #1a0f14 50%, #0a0810 100%);
+    z-index:1200;
+    display:flex;
+    flex-direction:column;
+    padding:60px 36px 40px;
+    gap:40px;
+    transition:right .35s cubic-bezier(.77,0,.18,1);
+    box-shadow:-8px 0 40px rgba(0,0,0,.5);
+}
+
+.menu-mobile.open{ right:0; }
+
+.menu-mobile-close{
+    position:absolute;
+    top:20px;
+    right:24px;
+    background:none;
+    border:none;
+    color:#C8A15B;
+    font-size:28px;
+    cursor:pointer;
+    line-height:1;
+}
+
+.menu-mobile-links{
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+}
+
+.menu-mobile-links a{
+    color:#fff;
+    text-decoration:none;
+    font-size:20px;
+    font-family:'Cormorant Garamond', serif;
+    letter-spacing:1px;
+    transition:.3s;
+    border-bottom:1px solid rgba(200,161,91,.1);
+    padding-bottom:16px;
+}
+
+.menu-mobile-links a:hover,
+.menu-mobile-links a.active{
+    color:#C8A15B;
+}
+
+@media(max-width:768px){
+    .hamburger{ display:flex; }
+    .menu.desktop-only-nav{ display:none; }
+    .btn-whatsapp.desktop-only{ display:none; }
+
+    /* esconde o menu desktop */
+    .header .menu{
+        display:none;
+    }
+}

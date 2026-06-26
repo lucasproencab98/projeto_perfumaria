@@ -19,9 +19,26 @@
             <a href="marca.html"      data-page="marca">Marca</a>
             <a href="contato.html"    data-page="contato">Contato</a>
         </nav>
-        <a href="#" class="btn-whatsapp">WhatsApp</a>
+        <a href="#" class="btn-whatsapp desktop-only">WhatsApp</a>
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </button>
     </div>
 </header>
+
+<!-- MENU MOBILE -->
+<div class="menu-mobile" id="menuMobile">
+    <button class="menu-mobile-close" onclick="toggleMenu()">×</button>
+    <nav class="menu-mobile-links">
+        <a href="index.html"      data-page="inicio"     onclick="toggleMenu()">Início</a>
+        <a href="perfumes.html"   data-page="perfumes"   onclick="toggleMenu()">Perfumes</a>
+        <a href="cosmeticos.html" data-page="cosmeticos" onclick="toggleMenu()">Cosméticos</a>
+        <a href="marca.html"      data-page="marca"      onclick="toggleMenu()">Marca</a>
+        <a href="contato.html"    data-page="contato"    onclick="toggleMenu()">Contato</a>
+    </nav>
+    <a href="#" class="btn-whatsapp">WhatsApp</a>
+</div>
+<div class="menu-mobile-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
 
 <section class="page-hero">
     <div class="page-hero-overlay"></div>
@@ -48,5 +65,31 @@
 </section>
 
 <script src="cube.js"></script>
+
+<!-- RODAPÉ -->
+<footer class="footer">
+    <div class="footer-topo container">
+
+        <div class="footer-marca">
+            <img src="imagens/logo/logo.png" alt="Kramer Parfum">
+            <p class="footer-frase">"Cada fragrância é uma história.<br>Qual será a sua?"</p>
+        </div>
+
+        <div class="footer-links">
+            <h4>Navegação</h4>
+            <a href="index.html" data-page="inicio">Início</a>
+            <a href="perfumes.html" data-page="perfumes">Perfumes</a>
+            <a href="cosmeticos.html" data-page="cosmeticos">Cosméticos</a>
+            <a href="marca.html" data-page="marca">Marca</a>
+            <a href="contato.html" data-page="contato">Contato</a>
+        </div>
+    </div>
+
+    <div class="footer-base">
+        <p>© 2025 Kramer Parfum. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+
 </body>
 </html>

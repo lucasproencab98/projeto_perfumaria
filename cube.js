@@ -69,3 +69,19 @@
     }
 
 })();
+
+/* =========================
+MENU MOBILE
+========================= */
+function toggleMenu(){
+    const menu    = document.getElementById('menuMobile');
+    const overlay = document.getElementById('menuOverlay');
+    const burger  = document.getElementById('hamburger');
+
+    if(!menu) return;
+
+    const open = menu.classList.toggle('open');
+    overlay.classList.toggle('open', open);
+    burger.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+}
