@@ -3,6 +3,7 @@
     "id": 1,
     "nome": "Ocean",
     "categoria": "Masculino",
+    "tipo": "marca-propria",
     "descricao": "Uma fragrância inspirada na força e profundidade do oceano. Fresca, intensa e marcante, Ocean carrega a essência do mar em cada borrifo.",
     "notas": {
       "topo": "Bergamota, Limão siciliano, Ozônico",
@@ -18,6 +19,7 @@
     "id": 2,
     "nome": "Máfios",
     "categoria": "Masculino",
+    "tipo": "marca-propria",
     "descricao": "Poder, elegância e presença em uma fragrância intensa. Máfios foi criado para homens que deixam marcas onde passam.",
     "notas": {
       "topo": "Pimenta negra, Cardamomo, Bergamota",
@@ -33,6 +35,7 @@
     "id": 3,
     "nome": "Zariah",
     "categoria": "Feminino",
+    "tipo": "marca-propria",
     "descricao": "Essência sedutora e mistérios perigosos. Zariah é uma fragrância que envolve, conquista e nunca é esquecida.",
     "notas": {
       "topo": "Rosa turca, Frutas vermelhas, Groselha",
@@ -48,6 +51,7 @@
     "id": 4,
     "nome": "Anurb'y",
     "categoria": "Unissex",
+    "tipo": "marca-propria",
     "descricao": "Extremamente gostoso, suculento e efervescente. Anurb'y é alegria pura em forma de fragrância.",
     "notas": {
       "topo": "Maracujá, Manga, Pitaya",
@@ -63,6 +67,7 @@
     "id": 5,
     "nome": "Blood & Silk Noir",
     "categoria": "Feminino",
+    "tipo": "marca-propria",
     "descricao": "Uma presença. Um desejo que deixa marcas mesmo quando você some. Blood & Silk Noir é pura sedução em frasco.",
     "notas": {
       "topo": "Ameixa, Framboesa negra, Especiarias",

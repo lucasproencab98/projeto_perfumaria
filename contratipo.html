@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marca — Kramer Parfum</title>
+    <title>Contratipos — Kramer Parfum</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body data-page="marca">
+<body data-page="perfumes">
 
 <header class="header">
     <div class="container">
@@ -43,18 +43,34 @@
 <section class="page-hero">
     <div class="page-hero-overlay"></div>
     <div class="container page-hero-content">
-        <span>Nossa História</span>
-        <h1>A Marca</h1>
-        <p>Sofisticação, exclusividade e paixão por fragrâncias.</p>
+        <span>Inspirados em Você</span>
+        <h1>Contratipos</h1>
+        <p>Fragrâncias inspiradas nos perfumes que você já ama.</p>
+        <a href="perfumes.html" class="btn-perfumes btn-ver-marca-propria">Ver Marca Própria</a>
     </div>
 </section>
 
-<section class="page-content container">
-    <div class="marca-texto">
-        <h2>Quem somos</h2>
-        <p>A Kramer Parfum nasceu da paixão por fragrâncias únicas e da crença de que um bom perfume é muito mais do que um aroma — é uma identidade, uma memória, uma presença que permanece.</p>
-        <p>Cada perfume da nossa coleção é cuidadosamente desenvolvido para contar uma história e despertar emoções genuínas em quem o usa.</p>
+<section class="produtos-grid container">
+
+    <!-- ✏️ EDITE AQUI: quando os perfumes contratipo estiverem definidos,
+         substitua este bloco por cards iguais aos de perfumes.html, no
+         padrão:
+
+    <a href="produto.html?id=X" class="produto-card">
+        <img src="imagens/produtos/perfumes/NOME.png" alt="Nome">
+        <div class="produto-info">
+            <span>Categoria</span>
+            <h3>Nome</h3>
+            <p>Descrição curta.</p>
+            <div class="produto-preco">R$ 0,00</div>
+        </div>
+    </a>
+    -->
+
+    <div class="produtos-em-breve">
+        <p>Em breve, novos perfumes contratipo por aqui.</p>
     </div>
+
 </section>
 
 <script src="cube.js"></script>
@@ -63,24 +79,30 @@
 <footer class="footer">
     <div class="footer-topo container">
 
-        <!-- ESQUERDA: logo + frase -->
         <div class="footer-marca">
             <img src="imagens/logo/logo.png" alt="Kramer Parfum">
             <p class="footer-frase">"Cada fragrância é uma história.<br>Qual será a sua?"</p>
-            <!-- ícones só no mobile -->
-            <div class="footer-social-mobile">
-                <a href="https://instagram.com/kramerparfum" target="_blank" title="Instagram">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-                </a>
-                <a href="https://wa.me/5500000000000" target="_blank" title="WhatsApp">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.116 1.524 5.849L.057 23.487a.5.5 0 00.611.611l5.638-1.467A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.504-5.17-1.385l-.37-.217-3.835.997.997-3.835-.217-.37A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-                </a>
-            </div>
         </div>
 
-        <!-- CENTRO: Proantech removido do grid, vai para o rodapé base -->
+        <div class="footer-links">
+            <h4>Navegação</h4>
+            <a href="index.html" data-page="inicio">Início</a>
+            <a href="perfumes.html" data-page="perfumes">Perfumes</a>
+            <a href="cosmeticos.html" data-page="cosmeticos">Cosméticos</a>
+            <a href="marca.html" data-page="marca">Marca</a>
+            <a href="contato.html" data-page="contato">Contato</a>
+        </div>
 
-        <!-- DIREITA: redes sociais -->
+        <div class="footer-contato">
+            <h4>Contato</h4>
+            <a href="https://wa.me/5500000000000" target="_blank" class="footer-contato-item">
+                <span>📱</span> (00) 00000-0000
+            </a>
+            <a href="https://instagram.com/kramerparfum" target="_blank" class="footer-contato-item">
+                <span>📸</span> @kramerparfum
+            </a>
+        </div>
+
         <div class="footer-redes">
             <h4>Redes Sociais</h4>
             <a href="https://instagram.com/kramerparfum" target="_blank" class="footer-rede-btn">Instagram</a>
@@ -91,7 +113,6 @@
 
     <div class="footer-base">
         <p>© 2025 Kramer Parfum. Todos os direitos reservados.</p>
-        <p class="footer-dev">Desenvolvido por <a href="https://proantech.vercel.app/" target="_blank">Proantech</a></p>
     </div>
 </footer>
 

@@ -68,6 +68,16 @@ function openShowcase(id){
     document.getElementById("productDesc").textContent = produto.descricao;
     document.getElementById("productCategoria").textContent = produto.categoria;
 
+    // Pirâmide olfativa
+    if(produto.notas){
+        document.getElementById("notasTopo").textContent    = produto.notas.topo    || "";
+        document.getElementById("notasCoracao").textContent = produto.notas.coracao || "";
+        document.getElementById("notasFundo").textContent   = produto.notas.fundo   || "";
+        document.querySelector(".piramide").style.display = "block";
+    } else {
+        document.querySelector(".piramide").style.display = "none";
+    }
+
     // Link WhatsApp
     const msg = encodeURIComponent("Olá! Tenho interesse no perfume " + produto.whatsapp);
     document.getElementById("productWhatsapp").href = "https://wa.me/?text=" + msg;

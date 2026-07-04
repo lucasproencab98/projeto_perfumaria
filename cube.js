@@ -22,12 +22,20 @@
     });
 
     // Intercepta cliques no menu
-    document.querySelectorAll('.menu a[data-page]').forEach(link => {
+    document.querySelectorAll('.menu a[data-page], .menu-mobile-links a[data-page]').forEach(link => {
         link.addEventListener('click', function(e){
             e.preventDefault();
 
             const destPage = this.dataset.page;
-            if(destPage === page) return; // já está na página
+
+            // já está na página — volta ao topo suavemente
+            if(destPage === page){
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                // fecha menu mobile se estiver aberto
+                const menu = document.getElementById('menuMobile');
+                if(menu && menu.classList.contains('open')) toggleMenu();
+                return;
+            }
 
             const destUrl = pages[destPage];
             const currentIndex = Object.keys(pages).indexOf(page);
