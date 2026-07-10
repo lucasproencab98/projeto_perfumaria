@@ -634,12 +634,11 @@ PÁGINAS INTERNAS
 /* Hero das páginas internas */
 .page-hero{
     position:relative;
-    height:45vh;
     min-height:300px;
     display:flex;
     align-items:flex-end;
     padding-top:220px;
-    padding-bottom:60px;
+    padding-bottom:40px;
 }
 
 .page-hero-overlay{
@@ -677,6 +676,12 @@ PÁGINAS INTERNAS
 .page-hero-content p{
     opacity:.7;
     font-size:15px;
+    text-decoration:none;
+}
+
+/* garante que nenhum elemento dentro do page-hero-content herde sublinhado */
+.page-hero-content *{
+    text-decoration:none;
 }
 
 /* Grid de produtos */
@@ -1675,4 +1680,12 @@ PIRÂMIDE OLFATIVA - SHOWCASE
     .piramide-notas{
         font-size:11px;
     }
+}
+
+/* botão Ver Contratipos fora do hero */
+.perfumes-actions{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    padding:28px 0 0;
 }
