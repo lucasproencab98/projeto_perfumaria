@@ -166,23 +166,23 @@ HERO
 
 /* BACKGROUNDS */
 .slide1{
-    background:url("imagens/produtos/perfumes/ocean.png") top/cover no-repeat;
+    background:url("imagens/produtos/perfumes/ocean.png") center/cover no-repeat;
 }
 
 .slide2{
-    background:url("imagens/produtos/perfumes/mafios.png") top/cover no-repeat;
+    background:url("imagens/produtos/perfumes/mafios.png") center/cover no-repeat;
 }
 
 .slide3{
-    background:url("imagens/produtos/perfumes/zaraia.png") top/cover no-repeat;
+    background:url("imagens/produtos/perfumes/zaraia.png") center/cover no-repeat;
 }
 
 .slide4{
-    background:url("imagens/produtos/perfumes/anurby.png") top/cover no-repeat;
+    background:url("imagens/produtos/perfumes/anurby.png") center/cover no-repeat;
 }
 
 .slide5{
-    background:url("imagens/produtos/perfumes/bloodesilk.png") top/cover no-repeat;
+    background:url("imagens/produtos/perfumes/bloodesilk.png") center/cover no-repeat;
 }
 
 /* OVERLAY */
@@ -1588,11 +1588,11 @@ RODAPÉ MOBILE
 SLIDES MOBILE - CENTRALIZAR PERFUMES
 ========================= */
 @media(max-width:768px){
-    .slide1{ background-position: 70%; }
-    .slide2{ background-position: 73%; }
-    .slide3{ background-position: 75%; }
-    .slide4{ background-position: 75%; }
-    .slide5{ background-position: 76%; }
+    .slide1{ background:url("imagens/produtos/perfumes/ocean-mobile.png") center/cover no-repeat; }
+    .slide2{ background:url("imagens/produtos/perfumes/mafios-mobile.png") center/cover no-repeat; }
+    .slide3{ background:url("imagens/produtos/perfumes/zaraia-mobile.png") center/cover no-repeat; }
+    .slide4{ background:url("imagens/produtos/perfumes/anurby-mobile.png") center/cover no-repeat; }
+    .slide5{ background:url("imagens/produtos/perfumes/bloodesilk-mobile.png") center/cover no-repeat; }
 }
 
 /* =========================
@@ -1688,4 +1688,69 @@ PIRÂMIDE OLFATIVA - SHOWCASE
     gap:12px;
     flex-wrap:wrap;
     padding:28px 0 0;
+}
+
+/* =========================
+HEADER SOCIAL - WhatsApp | Instagram
+========================= */
+.header-social{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.header-social a{
+    color:#C8A15B;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:500;
+    transition:.3s;
+    background:none;
+    border:none;
+    padding:0;
+}
+
+.header-social a:hover{
+    opacity:.7;
+}
+
+.header-social-sep{
+    color:rgba(200,161,91,.4);
+    font-size:13px;
+}
+
+@media(max-width:768px){
+    .header-social{
+        display:none;
+    }
+}
+
+/* =========================
+MENU MOBILE - ÍCONES SOCIAIS
+========================= */
+.menu-mobile-social{
+    display:flex;
+    gap:16px;
+    justify-content:center;
+    margin-top:auto;
+    padding-top:20px;
+    border-top:1px solid rgba(200,161,91,.15);
+}
+
+.menu-social-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    border:1px solid rgba(200,161,91,.3);
+    color:#C8A15B;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.menu-social-btn:hover{
+    background:#C8A15B;
+    color:#111;
 }
