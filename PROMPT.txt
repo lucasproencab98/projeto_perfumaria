@@ -1,3 +1,6 @@
+quero que voce salve esta imagem como padrão para os slides que vou pedir a seguir. Todos os slides deverão ter a mesma resolução desta imagem. Todos os slides deverão ter a mesma proporção de tamanho dos frascos dessa imagem
+
+
 Resolução: 1920×1080 px.
 Fundo em degradê grená para preto ou branco, dependendo da coleção.
 Frascos em destaque, sem distorções.

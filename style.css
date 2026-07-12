@@ -349,6 +349,9 @@ SHOWCASE
 .info{
     width:40%;
     padding:40px;
+    overflow-y:auto;
+    display:flex;
+    flex-direction:column;
 }
 
 .info h2{
@@ -367,7 +370,8 @@ SHOWCASE
     display:flex;
     gap:12px;
     flex-wrap:wrap;
-    margin-top:24px;
+    margin-top:auto;
+    padding-top:24px;
 }
 
 /* "Comprar já": todo dourado, letras brancas */

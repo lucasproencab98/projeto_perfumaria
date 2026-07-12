@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfumes — Kramer Parfum</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=1.1">
 </head>
 <body data-page="perfumes">
 
@@ -60,61 +60,28 @@
     <a href="contratipo.html" class="btn-perfumes btn-ver-contratipo">Ver Contratipos</a>
 </div>
 
-<section class="produtos-grid container">
+<section class="produtos-grid container" id="produtosGrid"></section>
 
-    <a href="produto.html?id=1" class="produto-card">
-        <img src="imagens/produtos/perfumes/ocean.png" alt="Ocean">
-        <div class="produto-info">
-            <span>Masculino</span>
-            <h3>Ocean</h3>
-            <p>Uma fragrância inspirada na força e profundidade do oceano.</p>
-            <div class="produto-preco">R$ 189,90</div>
-        </div>
-    </a>
+<script>
+fetch('data/produtos.json?v=1.1')
+    .then(r => r.json())
+    .then(produtos => {
+        const grid = document.getElementById('produtosGrid');
+        grid.innerHTML = produtos.map(p => `
+            <a href="produto.html?id=${p.id}" class="produto-card">
+                <img src="${p.imagens[0]}" alt="${p.nome}">
+                <div class="produto-info">
+                    <span>${p.categoria}</span>
+                    <h3>${p.nome}</h3>
+                    <p>${p.descricao.substring(0, 80)}...</p>
+                    <div class="produto-preco">${p.preco}</div>
+                </div>
+            </a>
+        `).join('');
+    });
+</script>
 
-    <a href="produto.html?id=2" class="produto-card">
-        <img src="imagens/produtos/perfumes/mafios.png" alt="Máfios">
-        <div class="produto-info">
-            <span>Masculino</span>
-            <h3>Máfios</h3>
-            <p>Poder, elegância e presença em uma fragrância intensa.</p>
-            <div class="produto-preco">R$ 219,90</div>
-        </div>
-    </a>
-
-    <a href="produto.html?id=3" class="produto-card">
-        <img src="imagens/produtos/perfumes/zaraia.png" alt="Zariah">
-        <div class="produto-info">
-            <span>Feminino</span>
-            <h3>Zariah</h3>
-            <p>Essência sedutora e mistérios perigosos.</p>
-            <div class="produto-preco">R$ 199,90</div>
-        </div>
-    </a>
-
-    <a href="produto.html?id=4" class="produto-card">
-        <img src="imagens/produtos/perfumes/anurby.png" alt="Anurb'y">
-        <div class="produto-info">
-            <span>Unissex</span>
-            <h3>Anurb'y</h3>
-            <p>Extremamente gostoso, suculento e efervescente.</p>
-            <div class="produto-preco">R$ 179,90</div>
-        </div>
-    </a>
-
-    <a href="produto.html?id=5" class="produto-card">
-        <img src="imagens/produtos/perfumes/bloodesilk.png" alt="Blood & Silk Noir">
-        <div class="produto-info">
-            <span>Feminino</span>
-            <h3>Blood & Silk Noir</h3>
-            <p>Uma presença que deixa marcas mesmo quando você some.</p>
-            <div class="produto-preco">R$ 229,90</div>
-        </div>
-    </a>
-
-</section>
-
-<script src="cube.js"></script>
+<script src="cube.js?v=1.1"></script>
 
 <!-- RODAPÉ -->
 <footer class="footer">

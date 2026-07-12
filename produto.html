@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kramer Parfum</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=1.1">
 </head>
 <body data-page="perfumes">
 
@@ -50,114 +50,67 @@
 <div class="detalhe-wrap" id="detalheProduto"></div>
 
 <script>
-const produtos = [
-    {
-        id: 1,
-        nome: "Ocean",
-        categoria: "Masculino",
-        descricao: "Uma fragrância inspirada na força e profundidade do oceano. Fresca, intensa e marcante, Ocean carrega a essência do mar em cada borrifo.",
-        notas: { topo: "Bergamota, Limão siciliano, Ozônico", coracao: "Flor de Lotus, Jasmin, Algas marinhas", fundo: "Âmbar, Sândalo, Almíscar branco" },
-        sugestao: "Ideal para o dia a dia, ambientes ao ar livre e ocasiões casuais. Perfeito para os meses mais quentes.",
-        preco: "R$ 189,90",
-        imagem: "imagens/produtos/perfumes/ocean.png",
-        whatsapp: "Ocean"
-    },
-    {
-        id: 2,
-        nome: "Máfios",
-        categoria: "Masculino",
-        descricao: "Poder, elegância e presença em uma fragrância intensa. Máfios foi criado para homens que deixam marcas onde passam.",
-        notas: { topo: "Pimenta negra, Cardamomo, Bergamota", coracao: "Couro, Oud, Violeta", fundo: "Vetiver, Âmbar escuro, Baunilha" },
-        sugestao: "Recomendado para noites especiais, eventos formais e ocasiões que exigem presença marcante.",
-        preco: "R$ 219,90",
-        imagem: "imagens/produtos/perfumes/mafios.png",
-        whatsapp: "Mafios"
-    },
-    {
-        id: 3,
-        nome: "Zariah",
-        categoria: "Feminino",
-        descricao: "Essência sedutora e mistérios perigosos. Zariah é uma fragrância que envolve, conquista e nunca é esquecida.",
-        notas: { topo: "Rosa turca, Frutas vermelhas, Groselha", coracao: "Peônia, Íris, Patchouli", fundo: "Almíscar rosado, Baunilha, Sândalo" },
-        sugestao: "Perfeita para encontros românticos, jantares e ocasiões noturnas onde você quer ser inesquecível.",
-        preco: "R$ 199,90",
-        imagem: "imagens/produtos/perfumes/zaraia.png",
-        whatsapp: "Zariah"
-    },
-    {
-        id: 4,
-        nome: "Anurb'y",
-        categoria: "Unissex",
-        descricao: "Extremamente gostoso, suculento e efervescente. Anurb'y é alegria pura em forma de fragrância.",
-        notas: { topo: "Maracujá, Manga, Pitaya", coracao: "Flor de laranjeira, Jasmim, Caramelo", fundo: "Coco, Baunilha cremosa, Almíscar" },
-        sugestao: "Ótimo para o dia a dia, ambientes descontraídos e quem ama fragrâncias frutadas e marcantes.",
-        preco: "R$ 179,90",
-        imagem: "imagens/produtos/perfumes/anurby.png",
-        whatsapp: "Anurby"
-    },
-    {
-        id: 5,
-        nome: "Blood & Silk Noir",
-        categoria: "Feminino",
-        descricao: "Uma presença. Um desejo que deixa marcas mesmo quando você some. Blood & Silk Noir é pura sedução em frasco.",
-        notas: { topo: "Ameixa, Framboesa negra, Especiarias", coracao: "Rosa negra, Oud, Incenso", fundo: "Couro suave, Âmbar, Almíscar escuro" },
-        sugestao: "Para noites intensas, ocasiões sofisticadas e mulheres que não passam despercebidas.",
-        preco: "R$ 229,90",
-        imagem: "imagens/produtos/perfumes/bloodesilk.png",
-        whatsapp: "Blood Silk Noir"
-    }
-];
-
+const VERSAO = "1.1";
 const params = new URLSearchParams(window.location.search);
 const prodId = parseInt(params.get('id'));
-const p = produtos.find(x => x.id === prodId);
 
-if(!p){
-    document.getElementById('detalheProduto').innerHTML = '<p style="padding:200px 40px;text-align:center;opacity:.5">Produto não encontrado.</p>';
-} else {
-    document.title = p.nome + ' — Kramer Parfum';
-    const msg = encodeURIComponent('Olá! Tenho interesse no perfume ' + p.whatsapp);
-    const waLink = 'https://wa.me/?text=' + msg;
+fetch('data/produtos.json?v=' + VERSAO)
+    .then(r => r.json())
+    .then(produtos => {
+        const p = produtos.find(x => x.id === prodId);
 
-    document.getElementById('detalheProduto').innerHTML = `
-        <a href="perfumes.html" class="btn-voltar">← Voltar</a>
-        <div class="detalhe-img" style="background-image:url('${p.imagem}')">
-            <div class="detalhe-img-overlay"></div>
-        </div>
-        <div class="detalhe-info">
-            <span class="detalhe-categoria">${p.categoria}</span>
-            <h1 class="detalhe-nome">${p.nome}</h1>
-            <p class="detalhe-desc">${p.descricao}</p>
-            <div class="notas-wrap">
-                <h3>Notas Olfativas</h3>
-                <div class="notas-grid">
-                    <div class="nota-item">
-                        <span class="nota-label">Topo</span>
-                        <p>${p.notas.topo}</p>
-                    </div>
-                    <div class="nota-item">
-                        <span class="nota-label">Coração</span>
-                        <p>${p.notas.coracao}</p>
-                    </div>
-                    <div class="nota-item">
-                        <span class="nota-label">Fundo</span>
-                        <p>${p.notas.fundo}</p>
+        if(!p){
+            document.getElementById('detalheProduto').innerHTML = '<p style="padding:200px 40px;text-align:center;opacity:.5">Produto não encontrado.</p>';
+            return;
+        }
+
+        document.title = p.nome + ' — Kramer Parfum';
+        const msg    = encodeURIComponent('Olá! Tenho interesse no perfume ' + p.whatsapp);
+        const waLink = 'https://wa.me/?text=' + msg;
+        const imagem = p.imagens ? p.imagens[0] : p.imagem;
+
+        document.getElementById('detalheProduto').innerHTML = `
+            <a href="perfumes.html" class="btn-voltar">← Voltar</a>
+            <div class="detalhe-img" style="background-image:url('${imagem}')">
+                <div class="detalhe-img-overlay"></div>
+            </div>
+            <div class="detalhe-info">
+                <span class="detalhe-categoria">${p.categoria}</span>
+                <h1 class="detalhe-nome">${p.nome}</h1>
+                <p class="detalhe-desc">${p.descricao}</p>
+                <div class="notas-wrap">
+                    <h3>Notas Olfativas</h3>
+                    <div class="notas-grid">
+                        <div class="nota-item">
+                            <span class="nota-label">Topo</span>
+                            <p>${p.notas.topo}</p>
+                        </div>
+                        <div class="nota-item">
+                            <span class="nota-label">Coração</span>
+                            <p>${p.notas.coracao}</p>
+                        </div>
+                        <div class="nota-item">
+                            <span class="nota-label">Fundo</span>
+                            <p>${p.notas.fundo}</p>
+                        </div>
                     </div>
                 </div>
+                <div class="sugestao-wrap">
+                    <h3>Sugestão de Uso</h3>
+                    <p>${p.sugestao}</p>
+                </div>
+                <div class="detalhe-compra">
+                    <span class="detalhe-preco">${p.preco}</span>
+                    <a href="${waLink}" target="_blank" class="btn-comprar">Compre já no WhatsApp</a>
+                </div>
             </div>
-            <div class="sugestao-wrap">
-                <h3>Sugestão de Uso</h3>
-                <p>${p.sugestao}</p>
-            </div>
-            <div class="detalhe-compra">
-                <span class="detalhe-preco">${p.preco}</span>
-                <a href="${waLink}" target="_blank" class="btn-comprar">Compre já no WhatsApp</a>
-            </div>
-        </div>
-    `;
-}
+        `;
+    })
+    .catch(() => {
+        document.getElementById('detalheProduto').innerHTML = '<p style="padding:200px 40px;text-align:center;opacity:.5">Erro ao carregar produto.</p>';
+    });
 </script>
-<script src="cube.js"></script>
+<script src="cube.js?v=1.1"></script>
 <footer class="footer">
     <div class="footer-topo container">
 
