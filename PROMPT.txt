@@ -10,11 +10,11 @@ Nome do perfume em branco ou dourado.
 Logo da Kramer Parfum discreta.
 Espaço suficiente para o menu do site sem esconder o produto.
 
-X Ocean: fundo em tons de azul escuro e prata.
+ Ocean: fundo em tons de azul escuro e prata.
 X Blood & Silk: grená escuro com detalhes dourados.
 X Zariah: branco, ouro rosé e preto.
-X Mafios: preto fosco com iluminação dourada.
-X Anurby: tons âmbar e dourado.
+ Mafios: preto fosco com iluminação dourada.
+ Anurby: tons âmbar e dourado.
 
 EXEMPLO DE PROMPT PARA OS SLIDES DO INICIAR
 Ocean: fundo em tons de azul escuro e prata.
