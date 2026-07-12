@@ -55,7 +55,6 @@
         // Face atual (página atual)
         const faceCurrent = document.createElement('div');
         faceCurrent.className = 'cube-face cube-current';
-        faceCurrent.style.backgroundImage = `url(${window.location.href})`;
 
         // Face próxima (cor sólida do tema enquanto carrega)
         const faceNext = document.createElement('div');

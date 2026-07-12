@@ -699,20 +699,6 @@ PÁGINAS INTERNAS
     justify-content:unset;
 }
 
-/* placeholder "em breve" (ex: página de Contratipo sem produtos ainda) */
-.produtos-em-breve{
-    grid-column:1 / -1;
-    border:1px dashed rgba(200,161,91,.3);
-    border-radius:16px;
-    padding:50px 30px;
-    text-align:center;
-    opacity:.6;
-}
-
-.produtos-em-breve p{
-    font-size:15px;
-}
-
 .produto-card{
     background:rgba(255,255,255,.04);
     border:1px solid rgba(200,161,91,.15);
@@ -1250,83 +1236,12 @@ RODAPÉ
     font-style:italic;
 }
 
-/* Proantech */
-.footer-proantech{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:8px;
-    text-align:center;
-    padding:30px 20px;
-    border:1px solid rgba(200,161,91,.12);
-    border-radius:16px;
-}
-
-.footer-proantech-label{
-    font-size:11px;
-    letter-spacing:2px;
-    text-transform:uppercase;
-    color:rgba(255,255,255,.4);
-}
-
-.footer-proantech-nome{
-    color:#C8A15B;
-    text-decoration:none;
-    font-family:'Cormorant Garamond', serif;
-    font-size:20px;
-    letter-spacing:1px;
-    transition:.3s;
-}
-
-.footer-proantech-nome:hover{
-    opacity:.7;
-}
-
-.footer-links h4,
-.footer-contato h4,
 .footer-redes h4{
     color:#C8A15B;
     font-size:11px;
     letter-spacing:3px;
     text-transform:uppercase;
     margin-bottom:20px;
-}
-
-.footer-links{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-}
-
-.footer-links a{
-    color:rgba(255,255,255,.6);
-    text-decoration:none;
-    font-size:14px;
-    transition:.3s;
-}
-
-.footer-links a:hover{
-    color:#C8A15B;
-}
-
-.footer-contato{
-    display:flex;
-    flex-direction:column;
-    gap:14px;
-}
-
-.footer-contato-item{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    color:rgba(255,255,255,.6);
-    text-decoration:none;
-    font-size:14px;
-    transition:.3s;
-}
-
-.footer-contato-item:hover{
-    color:#C8A15B;
 }
 
 .footer-redes{
@@ -1496,8 +1411,6 @@ MENU MOBILE
 
 @media(max-width:768px){
     .hamburger{ display:flex; }
-    .menu.desktop-only-nav{ display:none; }
-    .btn-whatsapp.desktop-only{ display:none; }
 
     /* esconde o menu desktop */
     .header .menu{

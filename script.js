@@ -1,9 +1,4 @@
 /* =========================
-VERSÃO
-========================= */
-const VERSAO = "1.1";
-
-/* =========================
 HERO SWIPER
 ========================= */
 const heroSwiper = new Swiper(".heroSwiper", {
@@ -53,8 +48,7 @@ function openShowcase(id){
         document.querySelector(".piramide").style.display = "none";
     }
 
-    const msg = encodeURIComponent("Olá! Tenho interesse no perfume " + produto.whatsapp);
-    document.getElementById("productWhatsapp").href = "https://wa.me/?text=" + msg;
+    document.getElementById("productWhatsapp").href = getWhatsAppLink("Olá! Tenho interesse no perfume " + produto.whatsapp);
 
     const wrapper = document.getElementById("showcaseWrapper");
     wrapper.innerHTML = "";
