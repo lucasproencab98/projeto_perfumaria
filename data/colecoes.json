@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "nome": "Kit Dia dos Pais — Linha Máfios",
+    "descricao": "Presença que impõe respeito. Fragrância que deixa legado. Kit completo com Shampoo 300ml, Condicionador 200ml, Pomada 150g e Leave-in 100ml.",
+    "preco": "R$ 149,90",
+    "imagem": "imagens/colecoes/pais_mafios.png",
+    "whatsapp": "Kit Dia dos Pais Linha Máfios"
+  },
+  {
+    "id": 2,
+    "nome": "Kit Dia dos Pais — Linha Ocean",
+    "descricao": "A força do mar. A essência de um pai. Kit completo com Shampoo em Barra 150g, Balm Hidratante 200g e Óleo de Barba 30ml.",
+    "preco": "R$ 89,90",
+    "imagem": "imagens/colecoes/pais_ocean.png",
+    "whatsapp": "Kit Dia dos Pais Linha Ocean"
+  }
+]

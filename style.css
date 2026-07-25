@@ -568,61 +568,6 @@ RESPONSIVO
 
 }
 
-/* =========================
-CUBE TRANSITION
-========================= */
-#cube-transition{
-    position:fixed;
-    inset:0;
-    z-index:99999;
-    perspective:1200px;
-    pointer-events:none;
-}
-
-.cube-face{
-    position:absolute;
-    inset:0;
-    background: linear-gradient(30deg, #3a0b18 0%, #1a0f14 40%, #0b0f1a 100%);
-    backface-visibility:hidden;
-}
-
-/* Face atual sai para a esquerda, próxima entra da direita */
-#cube-transition.animate-left .cube-current{
-    transform-origin: left center;
-    animation: cubeFaceOutLeft 0.7s cubic-bezier(.77,0,.18,1) forwards;
-}
-#cube-transition.animate-left .cube-next{
-    transform-origin: left center;
-    animation: cubeFaceInLeft 0.7s cubic-bezier(.77,0,.18,1) forwards;
-}
-
-/* Face atual sai para a direita, próxima entra da esquerda */
-#cube-transition.animate-right .cube-current{
-    transform-origin: right center;
-    animation: cubeFaceOutRight 0.7s cubic-bezier(.77,0,.18,1) forwards;
-}
-#cube-transition.animate-right .cube-next{
-    transform-origin: right center;
-    animation: cubeFaceInRight 0.7s cubic-bezier(.77,0,.18,1) forwards;
-}
-
-@keyframes cubeFaceOutLeft{
-    0%   { transform: rotateY(0deg); opacity:1; }
-    100% { transform: rotateY(-90deg); opacity:0; }
-}
-@keyframes cubeFaceInLeft{
-    0%   { transform: rotateY(90deg); opacity:0; }
-    100% { transform: rotateY(0deg); opacity:1; }
-}
-@keyframes cubeFaceOutRight{
-    0%   { transform: rotateY(0deg); opacity:1; }
-    100% { transform: rotateY(90deg); opacity:0; }
-}
-@keyframes cubeFaceInRight{
-    0%   { transform: rotateY(-90deg); opacity:0; }
-    100% { transform: rotateY(0deg); opacity:1; }
-}
-
 /* Link ativo no menu */
 .menu a.active{
     color:#C8A15B;
@@ -786,6 +731,42 @@ PÁGINAS INTERNAS
     margin-bottom:16px;
 }
 
+/* =========================
+POLÍTICA DE PRIVACIDADE
+========================= */
+.privacidade-texto{
+    max-width:800px;
+}
+
+.privacidade-texto h2{
+    font-family:'Cormorant Garamond', serif;
+    font-size:28px;
+    color:#C8A15B;
+    margin:36px 0 14px;
+}
+
+.privacidade-texto h2:first-of-type{
+    margin-top:20px;
+}
+
+.privacidade-texto p{
+    opacity:.75;
+    line-height:1.8;
+    font-size:15px;
+    margin-bottom:14px;
+}
+
+.privacidade-texto ul{
+    margin:0 0 16px 20px;
+    opacity:.75;
+    line-height:1.8;
+    font-size:15px;
+}
+
+.privacidade-texto li{
+    margin-bottom:6px;
+}
+
 .contato-box{
     display:flex;
     gap:40px;
@@ -813,6 +794,170 @@ PÁGINAS INTERNAS
     margin-bottom:24px;
     line-height:1.6;
 }
+
+/* =========================
+FORMULÁRIO DE CONTATO
+========================= */
+.contato-form-wrap{
+    margin-top:40px;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(200,161,91,.15);
+    border-radius:16px;
+    padding:40px;
+}
+
+.contato-form-wrap h3{
+    font-family:'Cormorant Garamond', serif;
+    font-size:32px;
+    color:#C8A15B;
+    margin-bottom:12px;
+}
+
+.contato-form-wrap > p{
+    opacity:.7;
+    margin-bottom:28px;
+    line-height:1.6;
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.form-group{
+    margin-bottom:20px;
+    display:flex;
+    flex-direction:column;
+}
+
+.form-group label{
+    font-size:13px;
+    opacity:.75;
+    margin-bottom:8px;
+}
+
+.form-group input,
+.form-group textarea{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(200,161,91,.25);
+    border-radius:8px;
+    padding:12px 14px;
+    color:#fff;
+    font-size:14px;
+    font-family:'Poppins', sans-serif;
+    transition:.3s;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder{
+    color:rgba(255,255,255,.35);
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+    outline:none;
+    border-color:#C8A15B;
+    background:rgba(255,255,255,.08);
+}
+
+.form-group textarea{
+    resize:vertical;
+}
+
+.form-group .input-erro{
+    border-color:#e05c5c;
+    background:rgba(224,92,92,.08);
+}
+
+.captcha-row{
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+.captcha-row input{
+    flex:1;
+}
+
+.captcha-refresh{
+    background:transparent;
+    border:1px solid rgba(200,161,91,.35);
+    color:#C8A15B;
+    width:44px;
+    height:44px;
+    border-radius:8px;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+    flex-shrink:0;
+}
+
+.captcha-refresh:hover{
+    background:rgba(200,161,91,.15);
+}
+
+.form-msg{
+    min-height:20px;
+    font-size:13px;
+    margin-bottom:12px;
+}
+
+.form-msg.erro{
+    color:#e05c5c;
+}
+
+.form-msg.sucesso{
+    color:#7bc47f;
+}
+
+.form-check{
+    margin-bottom:24px;
+}
+
+.checkbox-label{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    font-size:13px;
+    opacity:.8;
+    line-height:1.5;
+    cursor:pointer;
+}
+
+.checkbox-label input[type="checkbox"]{
+    margin-top:3px;
+    width:16px;
+    height:16px;
+    accent-color:#C8A15B;
+    flex-shrink:0;
+    cursor:pointer;
+}
+
+.checkbox-label a{
+    color:#C8A15B;
+    text-decoration:underline;
+}
+
+.form-check.input-erro{
+    outline:1px solid #e05c5c;
+    border-radius:8px;
+    padding:6px;
+    margin-left:-6px;
+    margin-right:-6px;
+}
+
+.btn-enviar-contato{
+    border:none;
+    cursor:pointer;
+}
+
+@media(max-width:700px){
+    .form-row{
+        grid-template-columns:1fr;
+    }
+}
+
 
 /* =========================
 DETALHE DO PRODUTO
@@ -1303,6 +1448,21 @@ RODAPÉ
     color:rgba(200,161,91,.5);
 }
 
+.footer-politica{
+    font-size:11px !important;
+    letter-spacing:0 !important;
+}
+
+.footer-politica a{
+    color:rgba(255,255,255,.35);
+    text-decoration:underline;
+    transition:.3s;
+}
+
+.footer-politica a:hover{
+    color:#C8A15B;
+}
+
 @media(max-width:768px){
     .footer-topo{
         grid-template-columns:1fr 1fr;
@@ -1670,4 +1830,62 @@ MENU MOBILE - ÍCONES SOCIAIS
 .menu-social-btn:hover{
     background:#C8A15B;
     color:#111;
+}
+
+/* =========================
+COLEÇÕES
+========================= */
+.colecao-card{
+    display:flex;
+    flex-direction:column;
+    grid-column: 1 / -1; /* ocupa a linha inteira */
+}
+
+.colecao-card img{
+    width:100%;
+    height:auto;
+    max-height:none;
+    object-fit:contain;
+    object-position:center;
+    border-radius:16px;
+    display:block;
+}
+
+.colecao-footer{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:16px;
+    flex-wrap:wrap;
+    margin-top:16px;
+    padding-bottom:20px;
+}
+
+.colecao-btn{
+    font-size:14px;
+    padding:12px 28px;
+    border-radius:20px;
+    white-space:nowrap;
+}
+
+/* grid de coleções: 1 card por linha, bem grande */
+#colecoesGrid{
+    display:flex !important;
+    flex-direction:column;
+    gap:40px;
+}
+
+@media(max-width:768px){
+    .colecao-card img{
+        max-height:none;
+        height:auto;
+    }
+    .colecao-footer{
+        flex-direction:column;
+        align-items:center;
+    }
+    .colecao-btn{
+        width:100%;
+        text-align:center;
+    }
 }

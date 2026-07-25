@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
         <link rel="icon" type="image/x-icon" href="imagens/logo/fivicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marca — Kramer Parfum</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+    <title>Kramer Parfum</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=1.1">
     <script src="config.js?v=1.1"></script>
 </head>
-<body data-page="marca">
+<body data-page="cosmeticos">
 
 <header class="header">
     <div class="container">
@@ -51,26 +51,74 @@
 </div>
 <div class="menu-mobile-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
 
-<section class="page-hero">
-    <div class="page-hero-overlay"></div>
-    <div class="container page-hero-content">
-        <span>Nossa História</span>
-        <h1>A Marca</h1>
-        <p>Sofisticação, exclusividade e paixão por fragrâncias.</p>
-    </div>
-</section>
+<div class="detalhe-wrap" id="detalheProduto"></div>
 
-<section class="page-content container">
-    <div class="marca-texto">
-        <h2>Quem somos</h2>
-        <p>A Kramer Parfum nasceu da paixão por fragrâncias únicas e da crença de que um bom perfume é muito mais do que um aroma — é uma identidade, uma memória, uma presença que permanece.</p>
-        <p>Cada perfume da nossa coleção é cuidadosamente desenvolvido para contar uma história e despertar emoções genuínas em quem o usa.</p>
-    </div>
-</section>
+<script>
+const params = new URLSearchParams(window.location.search);
+const prodId = parseInt(params.get('id'));
 
+fetch('data/cosmeticos.json?v=' + VERSAO)
+    .then(r => r.json())
+    .then(produtos => {
+        const p = produtos.find(x => x.id === prodId);
+
+        if(!p){
+            document.getElementById('detalheProduto').innerHTML = '<p style="padding:200px 40px;text-align:center;opacity:.5">Produto não encontrado.</p>';
+            return;
+        }
+
+        document.title = p.nome + ' — Kramer Parfum';
+        const waLink = getWhatsAppLink('Olá! Tenho interesse no produto ' + p.whatsapp);
+        const imagem = p.imagens ? p.imagens[0] : p.imagem;
+
+        const notasHtml = p.notas ? `
+                <div class="notas-wrap">
+                    <h3>Notas Olfativas</h3>
+                    <div class="notas-grid">
+                        <div class="nota-item">
+                            <span class="nota-label">Topo</span>
+                            <p>${p.notas.topo}</p>
+                        </div>
+                        <div class="nota-item">
+                            <span class="nota-label">Coração</span>
+                            <p>${p.notas.coracao}</p>
+                        </div>
+                        <div class="nota-item">
+                            <span class="nota-label">Fundo</span>
+                            <p>${p.notas.fundo}</p>
+                        </div>
+                    </div>
+                </div>` : '';
+
+        const sugestaoHtml = p.sugestao ? `
+                <div class="sugestao-wrap">
+                    <h3>Sugestão de Uso</h3>
+                    <p>${p.sugestao}</p>
+                </div>` : '';
+
+        document.getElementById('detalheProduto').innerHTML = `
+            <a href="cosmeticos.html" class="btn-voltar">← Voltar</a>
+            <div class="detalhe-img" style="background-image:url('${imagem}')">
+                <div class="detalhe-img-overlay"></div>
+            </div>
+            <div class="detalhe-info">
+                <span class="detalhe-categoria">${p.categoria}</span>
+                <h1 class="detalhe-nome">${p.nome}</h1>
+                <p class="detalhe-desc">${p.descricao}</p>
+                ${notasHtml}
+                ${sugestaoHtml}
+                <div class="detalhe-compra">
+                    <span class="detalhe-preco">${p.preco}</span>
+                    <a href="${waLink}" target="_blank" class="btn-comprar">Compre já no WhatsApp</a>
+                </div>
+            </div>
+        `;
+    })
+    .catch(() => {
+        document.getElementById('detalheProduto').innerHTML = '<p style="padding:200px 40px;text-align:center;opacity:.5">Erro ao carregar produto.</p>';
+    });
+</script>
 <script src="cube.js?v=1.1"></script>
-
-<!-- RODAPÉ -->
 <footer class="footer">
     <div class="footer-topo container">
 
@@ -106,6 +154,5 @@
         <p class="footer-dev">Desenvolvido por <a href="https://proantech.vercel.app/" target="_blank">Proantech</a></p>
     </div>
 </footer>
-
 </body>
 </html>
