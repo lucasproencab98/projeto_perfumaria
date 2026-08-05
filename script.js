@@ -60,6 +60,7 @@ function openShowcase(id){
     });
 
     document.getElementById("showcase").classList.add("active");
+    document.body.classList.add("popup-open");
 
     setTimeout(() => {
         if(window.showcaseSwiper) window.showcaseSwiper.destroy(true, true);
@@ -75,4 +76,5 @@ SHOWCASE CLOSE
 ========================= */
 function closeShowcase(){
     document.getElementById("showcase").classList.remove("active");
+    document.body.classList.remove("popup-open");
 }
