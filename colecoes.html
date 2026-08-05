@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coleções — Kramer Parfum</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=1.4">
+    <link rel="stylesheet" href="style.css?v=1.5">
     <script src="config.js?v=1.1"></script>
 </head>
 <body data-page="colecoes">
@@ -115,7 +115,6 @@ fetch('data/colecoes.json?v=1.3')
                     <p>${c.descricao}</p>
                     <div class="colecao-footer">
                         <div class="produto-preco">${c.preco}</div>
-                        <span class="btn-comprar-ja colecao-btn">Ver o que tem no kit</span>
                     </div>
                 </div>
             </div>`
@@ -141,12 +140,27 @@ function openColecao(id){
     document.getElementById('colecaoWhatsapp').href = getWhatsAppLink('Olá! Tenho interesse na ' + (c.whatsapp || c.nome));
 
     document.getElementById('showcaseColecao').classList.add('active');
-    document.body.classList.add('popup-open');
+    lockScroll();
 }
 
 function closeColecao(){
     document.getElementById('showcaseColecao').classList.remove('active');
+    unlockScroll();
+}
+
+/* trava a página no lugar exato em que estava, sem deixar o fundo rolar */
+function lockScroll(){
+    const scrollY = window.scrollY;
+    document.body.style.top = `-${scrollY}px`;
+    document.body.dataset.scrollY = scrollY;
+    document.body.classList.add('popup-open');
+}
+
+function unlockScroll(){
+    const scrollY = parseInt(document.body.dataset.scrollY || '0');
     document.body.classList.remove('popup-open');
+    document.body.style.top = '';
+    window.scrollTo(0, scrollY);
 }
 </script>
 
