@@ -60,7 +60,7 @@ function openShowcase(id){
     });
 
     document.getElementById("showcase").classList.add("active");
-    document.body.classList.add("popup-open");
+    lockScroll();
 
     setTimeout(() => {
         if(window.showcaseSwiper) window.showcaseSwiper.destroy(true, true);
@@ -76,5 +76,24 @@ SHOWCASE CLOSE
 ========================= */
 function closeShowcase(){
     document.getElementById("showcase").classList.remove("active");
+    unlockScroll();
+}
+
+/* =========================
+TRAVA DE SCROLL DO FUNDO
+(usa position:fixed em vez de só overflow:hidden porque overflow sozinho
+não segura o scroll por toque em vários navegadores mobile, ex. iOS)
+========================= */
+function lockScroll(){
+    const scrollY = window.scrollY;
+    document.body.style.top = `-${scrollY}px`;
+    document.body.dataset.scrollY = scrollY;
+    document.body.classList.add("popup-open");
+}
+
+function unlockScroll(){
+    const scrollY = parseInt(document.body.dataset.scrollY || "0");
     document.body.classList.remove("popup-open");
+    document.body.style.top = "";
+    window.scrollTo(0, scrollY);
 }
