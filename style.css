@@ -10,6 +10,12 @@ body{
     color:#fff;
 }
 
+/* trava o scroll da página por trás quando um popup (showcase) está aberto */
+body.popup-open{
+    overflow:hidden;
+    height:100%;
+}
+
 /* =========================
 HEADER
 ========================= */
