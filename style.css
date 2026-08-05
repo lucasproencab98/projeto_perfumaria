@@ -10,10 +10,13 @@ body{
     color:#fff;
 }
 
-/* trava o scroll da página por trás quando um popup (showcase) está aberto */
+/* trava o scroll da página por trás quando um popup (showcase) está aberto
+   (usa position:fixed em vez de só overflow:hidden porque overflow sozinho
+   não segura o scroll por toque em vários navegadores mobile, ex. iOS) */
 body.popup-open{
+    position:fixed;
+    width:100%;
     overflow:hidden;
-    height:100%;
 }
 
 /* =========================
