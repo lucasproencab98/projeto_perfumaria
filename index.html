@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kramer Parfum</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=1.4">
+    <script src="config.js?v=1.1"></script>
+    <link rel="icon" type="image/x-icon" href="imagens/logo/fivicon.ico">
+</head>
+
+<body data-page="inicio">
+
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <img src="imagens/logo/logo.png" alt="Kramer Parfum">
+        </div>
+        <nav class="menu">
+            <a href="index.html"      data-page="inicio">Início</a>
+            <a href="perfumes.html"   data-page="perfumes">Perfumes</a>
+            <a href="cosmeticos.html" data-page="cosmeticos">Cosméticos</a>
+            <a href="colecoes.html"   data-page="colecoes">Coleções</a>
+            <a href="marca.html"      data-page="marca">Marca</a>
+            <a href="contato.html"    data-page="contato">Contato</a>
+        </nav>
+        <div class="header-social desktop-only"><a href="#" data-whatsapp target="_blank">WhatsApp</a><span class="header-social-sep">|</span><a href="https://instagram.com/kramerparfum" target="_blank">Instagram</a></div>
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>
+
+<!-- MENU MOBILE -->
+<div class="menu-mobile" id="menuMobile">
+    <button class="menu-mobile-close" onclick="toggleMenu()">×</button>
+    <nav class="menu-mobile-links">
+        <a href="index.html"      data-page="inicio"     onclick="toggleMenu()">Início</a>
+        <a href="perfumes.html"   data-page="perfumes"   onclick="toggleMenu()">Perfumes</a>
+        <a href="cosmeticos.html" data-page="cosmeticos" onclick="toggleMenu()">Cosméticos</a>
+        <a href="colecoes.html"   data-page="colecoes"   onclick="toggleMenu()">Coleções</a>
+        <a href="marca.html"      data-page="marca"      onclick="toggleMenu()">Marca</a>
+        <a href="contato.html"    data-page="contato"    onclick="toggleMenu()">Contato</a>
+    </nav>
+        <div class="menu-mobile-social">
+        <a href="#" data-whatsapp target="_blank" class="menu-social-btn" title="WhatsApp">
+            <svg width="24" height="24" fill="currentColor"><use href="imagens/icons.svg#icon-whatsapp"></use></svg>
+        </a>
+        <a href="https://instagram.com/kramerparfum" target="_blank" class="menu-social-btn" title="Instagram">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="imagens/icons.svg#icon-instagram"></use></svg>
+        </a>
+    </div>
+</div>
+<div class="menu-mobile-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+
+<section class="hero">
+    <div class="hero-bg-gradient"></div>
+    <div class="swiper heroSwiper">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide slide slide1">
+                <div class="overlay"></div>
+                <div class="container content">
+                    <div class="text">
+                        <span>Coleção Premium</span>
+                        <span class="nome-mobile">Ocean</span>
+                        <h1>Ocean</h1>
+                        <p>Uma fragrância inspirada na força e profundidade do oceano.</p>
+                        <div class="buttons">
+                            <a href="#" onclick="openShowcase(1); return false;">Conhecer</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide slide2">
+                <div class="overlay"></div>
+                <div class="container content">
+                    <div class="text">
+                        <span>Exclusividade</span>
+                        <span class="nome-mobile">Máfios</span>
+                        <h1>Máfios</h1>
+                        <p>Poder, elegância e presença em uma fragrância intensa.</p>
+                        <div class="buttons">
+                            <a href="#" onclick="openShowcase(2); return false;">Conhecer</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide slide3">
+                <div class="overlay"></div>
+                <div class="container content">
+                    <div class="text">
+                        <span>Sofisticação</span>
+                        <span class="nome-mobile">Zariah</span>
+                        <h1>Zariah</h1>
+                        <p>Essência sedutora e mistérios perigosos.</p>
+                        <div class="buttons">
+                            <a href="#" onclick="openShowcase(3); return false;">Conhecer</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide slide4">
+                <div class="overlay"></div>
+                <div class="container content">
+                    <div class="text">
+                        <span>Coleção Premium</span>
+                        <span class="nome-mobile">Anurb'y</span>
+                        <h1>Anurb'y</h1>
+                        <p>Extremamente gostoso, suculento e efervescente.</p>
+                        <div class="buttons">
+                            <a href="#" onclick="openShowcase(4); return false;">Conhecer</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide slide5">
+                <div class="overlay"></div>
+                <div class="container content">
+                    <div class="text">
+                        <span>Lançamento</span>
+                        <span class="nome-mobile">Blood &amp; Silk Noir</span>
+                        <h1>Blood & Silk Noir</h1>
+                        <p>Uma presença. Um desejo que deixa marcas mesmo quando você some.</p>
+                        <div class="buttons">
+                            <a href="#" onclick="openShowcase(5); return false;">Conhecer</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+</section>
+
+<!-- NOSSA HISTÓRIA -->
+<section class="historia">
+    <div class="container historia-inner">
+        <div class="historia-texto">
+            <span class="secao-label">Nossa História</span>
+            <h2>Nascemos da paixão por fragrâncias que marcam presença</h2>
+            <p>A Kramer Parfum surgiu há alguns anos com uma missão clara: oferecer perfumes que vão além do aroma — que contam histórias, despertam memórias e expressam identidade.</p>
+            <p>Trabalhamos com criações autorais e inspirações nas maiores referências do mundo da perfumaria, sempre com uma entrega: qualidade premium ao alcance de quem merece o melhor.</p>
+            <a href="marca.html" class="btn-historia">Conhecer a marca →</a>
+        </div>
+        <div class="historia-imagem">
+            <img src="imagens/logo/logo.png" alt="Kramer Parfum">
+        </div>
+    </div>
+</section>
+
+<!-- POR QUE NOS ESCOLHER -->
+<section class="diferenciais">
+    <div class="container">
+        <span class="secao-label">Por que nos escolher</span>
+        <h2 class="diferenciais-titulo">O que nos torna únicos</h2>
+        <div class="diferenciais-grid">
+
+            <div class="diferencial-card">
+                <div class="diferencial-icone">✦</div>
+                <h3>Fragrâncias Únicas e Autorais</h3>
+                <p>Criações próprias desenvolvidas para ser diferente de tudo que você já usou. Cada perfume tem uma identidade exclusiva.</p>
+            </div>
+
+            <div class="diferencial-card">
+                <div class="diferencial-icone">◈</div>
+                <h3>Exclusividade e Sofisticação</h3>
+                <p>Uma coleção cuidadosamente curada para quem valoriza o requinte nos detalhes e quer se destacar onde chegar.</p>
+            </div>
+
+            <div class="diferencial-card">
+                <div class="diferencial-icone">❋</div>
+                <h3>Qualidade Premium Acessível</h3>
+                <p>Ingredientes de alto padrão e fixação duradoura, sem o preço das grandes grifes. Luxo que cabe na sua realidade.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div class="showcase" id="showcase">
+    <div class="showcase-overlay" onclick="closeShowcase()"></div>
+    <div class="showcase-content">
+        <button class="close" onclick="closeShowcase()">×</button>
+        <div class="swiper showcaseSwiper">
+            <div class="swiper-wrapper" id="showcaseWrapper"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="info">
+            <h2 id="productName">Produto</h2>
+            <p id="productCategoria"></p>
+            <p id="productDesc">Descrição</p>
+
+            <!-- PIRÂMIDE OLFATIVA -->
+            <div class="piramide">
+                <div class="piramide-titulo">Pirâmide Olfativa</div>
+                <div class="piramide-visual">
+                    <div class="piramide-camada piramide-topo">
+                        <div class="piramide-label">Topo</div>
+                        <div class="piramide-notas" id="notasTopo"></div>
+                    </div>
+                    <div class="piramide-camada piramide-coracao">
+                        <div class="piramide-label">Coração</div>
+                        <div class="piramide-notas" id="notasCoracao"></div>
+                    </div>
+                    <div class="piramide-camada piramide-fundo">
+                        <div class="piramide-label">Fundo</div>
+                        <div class="piramide-notas" id="notasFundo"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="showcase-buttons">
+                <a id="productWhatsapp" href="#" class="btn-comprar-ja">Comprar já</a>
+                <a href="perfumes.html" class="btn-perfumes">Ir para Perfumes</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="script.js?v=1.2"></script>
+<script src="cube.js?v=1.1"></script>
+
+<!-- RODAPÉ -->
+<footer class="footer">
+    <div class="footer-topo container">
+
+        <!-- ESQUERDA: logo + frase -->
+        <div class="footer-marca">
+            <img src="imagens/logo/logo.png" alt="Kramer Parfum">
+            <p class="footer-frase">"Cada fragrância é uma história.<br>Qual será a sua?"</p>
+            <!-- ícones só no mobile -->
+            <div class="footer-social-mobile">
+                <a href="https://instagram.com/kramerparfum" target="_blank" title="Instagram">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="imagens/icons.svg#icon-instagram"></use></svg>
+                </a>
+                <a href="#" data-whatsapp target="_blank" title="WhatsApp">
+                    <svg width="20" height="20" fill="currentColor"><use href="imagens/icons.svg#icon-whatsapp"></use></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- CENTRO: Proantech removido do grid, vai para o rodapé base -->
+
+        <!-- DIREITA: redes sociais -->
+        <div class="footer-redes">
+            <h4>Redes Sociais</h4>
+            <a href="https://instagram.com/kramerparfum" target="_blank" class="footer-rede-btn">Instagram</a>
+            <a href="#" data-whatsapp target="_blank" class="footer-rede-btn">WhatsApp</a>
+        </div>
+
+    </div>
+
+    <div class="footer-base">
+        <p>© 2025 Kramer Parfum. Todos os direitos reservados.</p>
+        <p class="footer-politica"><a href="privacidade.html">Política de Privacidade</a></p>
+        <p class="footer-dev">Desenvolvido por <a href="https://proantech.vercel.app/" target="_blank">Proantech</a></p>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "nome": "Kit Dia dos Namorados",
+    "descricao": "Uma combinação perfeita para presentear quem você ama.",
+    "preco": "R$ 0,00",
+    "imagem": "imagens/colecoes/namorados.jpg",
+    "whatsapp": "Kit Dia dos Namorados"
+  },
+  {
+    "id": 2,
+    "nome": "Kit Dia dos Pais",
+    "descricao": "Presente exclusivo para um pai especial.",
+    "preco": "R$ 0,00",
+    "imagem": "imagens/colecoes/pais.jpg",
+    "whatsapp": "Kit Dia dos Pais"
+  },
+  {
+    "id": 3,
+    "nome": "Kit Dia das Mães",
+    "descricao": "Fragrâncias e cuidados para celebrar o amor materno.",
+    "preco": "R$ 0,00",
+    "imagem": "imagens/colecoes/maes.jpg",
+    "whatsapp": "Kit Dia das Mães"
+  }
+]

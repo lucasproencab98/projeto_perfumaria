@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "nome": "Ocean",
+    "categoria": "Masculino",
+    "tipo": "marca-propria",
+    "descricao": "Uma fragrância inspirada na força e profundidade do oceano. Fresca, intensa e marcante, Ocean carrega a essência do mar em cada borrifo.",
+    "notas": {
+      "topo": "Lima, Limão, Bergamota, Jasmim, Laranja, Mandarina e Néroli",
+      "coracao": "Jasmim, Pêssego, Frésia, Alecrim, Jacinto, Cyclamen, Violeta, Coentro, Noz-moscada, Rosa e Resedá",
+      "fundo": "Almíscar Branco, Cedro, Musgo de Carvalho, Patchouli e Âmbar"
+    },
+    "sugestao": "Ideal para o dia a dia, ambientes ao ar livre e ocasiões casuais. Perfeito para os meses mais quentes.",
+    "preco": "R$ 99,90",
+    "imagens": ["imagens/produtos/perfumes/ocean.png"],
+    "whatsapp": "Ocean"
+  },
+  {
+    "id": 2,
+    "nome": "Máfios",
+    "categoria": "Masculino",
+    "tipo": "marca-propria",
+    "descricao": "Poder, elegância e presença em uma fragrância intensa. Máfios foi criado para homens que deixam marcas onde passam.",
+    "notas": {
+      "topo": "Manga gelada, sálvia e tangerina",
+      "coracao": "Limão verdadeiro, wisk e hedione",
+      "fundo": "Sândalo, fava tonka, patchouli noir e tabaco"
+    },
+    "sugestao": "Recomendado para noites especiais, eventos formais e ocasiões que exigem presença marcante.",
+    "preco": "R$ 79,90",
+    "imagens": ["imagens/produtos/perfumes/mafios.png"],
+    "whatsapp": "Mafios"
+  },
+  {
+    "id": 3,
+    "nome": "Zariah",
+    "categoria": "Feminino",
+    "tipo": "marca-propria",
+    "descricao": "Essência sedutora e mistérios perigosos. Zariah é uma fragrância que envolve, conquista e nunca é esquecida.",
+    "notas": {
+      "topo": "Pimenta Rosa, Mandarina e Bergamota",
+      "coracao": "Algodão-Doce, Gardênia, Flores, Sardinheira e Rosa",
+      "fundo": "Baunilha, Almíscar, Sândalo, Caramelo, Patchouli e Violeta"
+    },
+    "sugestao": "Perfeita para encontros românticos, jantares e ocasiões noturnas onde você quer ser inesquecível.",
+    "preco": "R$ 79,90",
+    "imagens": ["imagens/produtos/perfumes/zaraia.png"],
+    "whatsapp": "Zariah"
+  },
+  {
+    "id": 4,
+    "nome": "Anurb'y",
+    "categoria": "Unissex",
+    "tipo": "marca-propria",
+    "descricao": "Extremamente gostoso, suculento e efervescente. Anurb'y é alegria pura em forma de fragrância.",
+    "notas": {
+      "topo": "Champanhe Rosé, pimenta rosa e notas frutadas",
+      "coracao": "Flor de pêssego e buquê de rosas",
+      "fundo": "Almíscar branco, âmbar e notas amadeiradas"
+    },
+    "sugestao": "Ótimo para o dia a dia, ambientes descontraídos e quem ama fragrâncias frutadas e marcantes.",
+    "preco": "R$ 109,90",
+    "imagens": ["imagens/produtos/perfumes/anurby.png"],
+    "whatsapp": "Anurby"
+  },
+  {
+    "id": 5,
+    "nome": "Blood & Silk Noir",
+    "categoria": "Feminino",
+    "tipo": "marca-propria",
+    "descricao": "Uma presença. Um desejo que deixa marcas mesmo quando você some. Blood & Silk Noir é pura sedução em frasco.",
+    "notas": {
+      "topo": " Sálvia Esclaréia e Mandarina",
+      "coracao": "Caramelo e Fava Tonka",
+      "fundo": "Vetiver"
+    },
+    "sugestao": "Para noites intensas, ocasiões sofisticadas e mulheres que não passam despercebidas.",
+    "preco": "R$ 109,90",
+    "imagens": ["imagens/produtos/perfumes/bloodesilk.png"],
+    "whatsapp": "Blood Silk Noir"
+  }
+]
