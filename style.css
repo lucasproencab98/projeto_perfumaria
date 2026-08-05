@@ -1759,6 +1759,36 @@ PIRÂMIDE OLFATIVA - SHOWCASE
     }
 }
 
+/* =========================
+LISTA DE ITENS DO KIT - POPUP DE COLEÇÃO
+========================= */
+.colecao-itens{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    padding:0;
+    margin:0;
+}
+
+.colecao-itens li{
+    position:relative;
+    padding:10px 14px 10px 30px;
+    background:rgba(200,161,91,.08);
+    border-left:3px solid #C8A15B;
+    border-radius:8px;
+    font-size:14px;
+    opacity:.9;
+}
+
+.colecao-itens li::before{
+    content:"✦";
+    position:absolute;
+    left:12px;
+    color:#C8A15B;
+    font-size:12px;
+}
+
 /* botão Ver Contratipos fora do hero */
 .perfumes-actions{
     display:flex;
